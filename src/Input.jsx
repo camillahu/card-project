@@ -1,32 +1,31 @@
 import React, {useState} from 'react';
-import Card from './Card.jsx'
+import Button1 from './Button1.jsx';
 
-function Input() {
+function Input(props) {
 
-//     const [name, setName] = useState("");
+    
 
-//     function handleNameChange(event) {
-//         setName(event.target.value);
-//     }
+    // const picture = props.picture;
+    // const name = props.name;
+    // const description = props.description;
 
-//     return(<div>
-//         <h3>Make your own card!</h3>
-//         <p>Name: {name}</p>
-//         <input value = {name} onChange = {handleNameChange}/>
+    return (<>
+    <div className="input-card">
+        <div className= "input-card-img"></div>
+        <input 
+            className = "input-card-name"  
+            type="text" placeholder='Name' 
+            value={props.name} onChange={props.onNameChange}/>
         
-//         </div>)
-// 
-    const picture = props.picture;
-    const name = props.name;
-    const description = props.description;
-    return (
-
-        <div className="card">
-        <img className= "card-img"src={picture}/>
-        <h2 className = "card-title">{name}</h2>
-        <p className = "card-text">{props.description}</p>
+        <textarea 
+            className = "input-card-text" 
+            type="text" placeholder='Description' 
+            maxLength={75} value={props.description} 
+            onChange={props.onDescriptionChange}></textarea>
         </div>
+        <button onClick={props.onAddCard}></button>
+        </>
     )
 }
 
-export default Input 
+export default Input;

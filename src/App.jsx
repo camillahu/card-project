@@ -1,32 +1,45 @@
-import Button1 from './Button1.jsx';
+
 import Card from './Card.jsx'
 import Input from './Input.jsx'
 import React, {useState} from 'react';
 
 function App() {
 
-const [newCards, setCards] = useState(['Card 1',]);
+const [cards, setCards] = useState([]);
+const [inputName, setInputName] = useState('')
+const [inputDescription, setInputDescription] = useState('');
 
 const addCard = () => {
-  setCards([...newCards, `Card ${newCards.length +1}`])
+
+if(inputName.trim() && inputDescription.trim()) {
+    setCards([...cards, {name: inputName, description: inputDescription}]);
+    setInputName('');
+    setInputDescription('');
+  }
+};
+
+const handleNameChange = (event) => {
+  setInputName(event.target.value);
 }
 
-const [newInput, setInput] = useState();
-
-const addInput = () => {
-
+const handleDescriptionChange = (event) => {
+  setInputDescription(event.target.value);
 }
 
 return( <>
 
   <div className= "cards-container">
-      
-      {newCards.map((index) => (
-        <Card key={index}/>
+      <Card />
+      {cards.map((card, index) => (
+        <Card key={index} name={card.name} description={card.description}/>
       ))}
-
-      <Button1 addCard ={addCard}/>  
   </div>
+  <Input 
+        name= {inputName} 
+        description= {inputDescription}
+        onNameChange={handleNameChange}
+        onDescriptionChange={handleDescriptionChange}
+        onAddCard={addCard}/>
   </>
 )
 }

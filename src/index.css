@@ -1,16 +1,23 @@
 .card{
+  display: flex;;
   border: 1px solid rgb(104, 104, 104);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.151);
   padding: 20px;
   margin: 10px;
   text-align: center;
-  max-width: 250px;
-  display: inline-block;
+  width: 250px;
+  height: 300px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.card:hover {
+  border: 2px solid rgb(104, 104, 104);
 }
 
 .card .card-img {
-  width: 60%;
+  width: 150px;
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -25,4 +32,67 @@
 .card .card-text {
   font-family: Arial, sans-serif;
   color: rgb(107, 107, 107);
+  font-size: medium;
+}
+
+.cards-container {
+  display:flex;
+}
+
+.button1 {
+  margin: 10px;
+}
+
+.input-card{
+  display: flex;
+  border: 1px solid rgb(104, 104, 104);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.151);
+  padding: 20px;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  flex-direction: column;
+}
+/* 
+.input-card:hover {
+  background-color: rgb(236, 236, 236);
+} */
+
+.input-card-img {
+  width: 150px;
+  height: 150px;
+  border:2px solid rgb(180, 179, 179);
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background-color: rgb(238, 238, 238);
+}
+
+.input-card-img:hover {
+  background-color: rgba(243, 243, 243, 0.514);
+  transition: ease 0.5s;
+  cursor: pointer;
+}
+
+.input-card-name {
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  border:2px solid rgb(180, 179, 179);
+  border-radius: 5px;
+  margin: 0;
+  width: 200px;
+}
+
+.input-card-text {
+  font-family: Arial, sans-serif;
+  color: rgb(107, 107, 107);
+  resize: none;
+  font-family: Arial, sans-serif;
+  border:2px solid rgb(180, 179, 179);
+  border-radius: 5px;
+  margin: 0;
+  width: 200px;
+  font-size: medium;
 }

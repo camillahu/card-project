@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+// import React, {useState} from 'react'
 
-function Button1({addCard}) {
+// function Button1({addCard}) {
 
-    const click = () => {
-        addCard();
-    }
+//     const click = () => {
+//         addCard();
+//     }
 
-    return (<button onClick={click}>Make your own card!</button>)
-}
+//     return (<button className ="button1"onClick={click}>Make your own card!</button>)
+// }
 
-export default Button1;
+// export default Button1;
