@@ -68,6 +68,9 @@
   border-radius: 50%;
   margin-bottom: 10px;
   background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-card-img:hover {

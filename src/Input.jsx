@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
-import Button1 from './Button1.jsx';
 
 function Input(props) {
 
-    
-
-    // const picture = props.picture;
-    // const name = props.name;
-    // const description = props.description;
+    const addCard = props.addCard
 
     return (<>
     <div className="input-card">
-        <div className= "input-card-img"></div>
+        <div className= "input-card-img">
+            {props.image ? <img src={props.image} 
+            alt="Preview" className="preview-image"/>
+            : 'No image selected'}
+        </div>
+        <input 
+            type= "file" 
+            accept="image/*" 
+            onChange={props.onImageChange}/>
         <input 
             className = "input-card-name"  
             type="text" placeholder='Name' 
@@ -23,7 +26,7 @@ function Input(props) {
             maxLength={75} value={props.description} 
             onChange={props.onDescriptionChange}></textarea>
         </div>
-        <button onClick={props.onAddCard}></button>
+        <button onClick={props.onAddCard}>Hei</button>
         </>
     )
 }

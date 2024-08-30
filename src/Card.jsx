@@ -1,15 +1,13 @@
-import profilePic from './assets/IMG_1707.JPEG'
+
+import defaultPic from './assets/Ja.jpg'
 import PropTypes from 'prop-types'
 
 function Card(props) {
 
-    // const picture = props.picture;
-    // const name = props.name;
-    // const description = props.description;
     return (
 
         <div className="card">
-        <img className= "card-img"src={props.picture}/>
+        <img className= "card-img"src={props.image} alt="Card-picture" />
         <h2 className = "card-title">{props.name}</h2>
         <p className = "card-text">{props.description}</p>
         </div>
@@ -17,13 +15,13 @@ function Card(props) {
 }
 
 Card.propTypes = {
-    // picture: PropTypes.string,
+    image: PropTypes.string,
     name: PropTypes.string,
     description: PropTypes.string
 }
 
 Card.defaultProps = {
-    picture: profilePic,
+    // image: defaultPic,
     name: "Camilla H. Urdal",
     description: "I am 24 years old and a student at Get Academy."
 }
