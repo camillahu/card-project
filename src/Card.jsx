@@ -3,11 +3,13 @@ import defaultPic from './assets/Ja.jpg'
 import PropTypes from 'prop-types'
 
 function Card(props) {
-
+console.log(props)
     return (
 
         <div className="card">
-        <img className= "card-img"src={props.image} alt="Card-picture" />
+            <div className= "card-img">{props.image ? <img src={props.image} 
+            alt="Preview"/>
+            : 'No image selected'} </div>
         <h2 className = "card-title">{props.name}</h2>
         <p className = "card-text">{props.description}</p>
         </div>

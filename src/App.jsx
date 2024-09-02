@@ -11,16 +11,11 @@ const [inputDescription, setInputDescription] = useState(''); //String som midle
 const [inputImage, setInputImage] = useState(null)
 
 const addCard = () => {
-  console.log("Current state before adding card:", {
-    name: inputName,
-    description: inputDescription,
-    image: inputImage,
-  });
 if(inputName.trim() && inputDescription.trim()&& inputImage) {  
 //denne sjekker at det er verdier i begge variablene etter den har tatt vekk whitespace.
 //dette gjør det umulig for brukeren å lage et kort uten å fylle inn, eller lage et kort som består av whitespace.
     
-    setCards([...cards, {name: inputName, description: inputDescription}]);
+    setCards([...cards, {name: inputName, description: inputDescription, image: inputImage}]);
     //setCards lager først en shallow-kopi av cards-arrayet, og legger til det nye kortet fra input-feltene
     setInputName('');
     setInputDescription('');
@@ -42,16 +37,15 @@ const handleDescriptionChange = (event) => {
 
 const handleImageChange = (event) => {
   const file = event.target.files[0];
-
+  // setInputImage(URL.createObjectURL(file))
   if(file) {
     const reader = new FileReader();
     reader.onload = () => {
-      console.log("Image loaded:", reader.result);
+      console.log("Steg 1 load img:", reader.result);
       setInputImage(reader.result)
     }
   reader.readAsDataURL(file)
   };
-  
 }
 
 //disse brukes på en onchange ^. valuen til setInputDescriptionblir sendt som parameter, og blir satt øverst i koden med useState.
@@ -69,6 +63,7 @@ return( <>
   <Input 
         name= {inputName} 
         description= {inputDescription}
+        image={inputImage}
         onNameChange={handleNameChange}
         onDescriptionChange={handleDescriptionChange}
         onImageChange={handleImageChange}

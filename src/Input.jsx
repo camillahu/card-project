@@ -1,15 +1,13 @@
-import React, {useState} from 'react';
+
 
 function Input(props) {
-
-    const addCard = props.addCard
 
     return (<>
     <div className="input-card">
         <div className= "input-card-img">
             {props.image ? <img src={props.image} 
             alt="Preview" className="preview-image"/>
-            : 'No image selected'}
+            : 'No image selected'} 
         </div>
         <input 
             type= "file" 
@@ -26,7 +24,7 @@ function Input(props) {
             maxLength={75} value={props.description} 
             onChange={props.onDescriptionChange}></textarea>
         </div>
-        <button onClick={props.onAddCard}>Hei</button>
+        <button className="save-card-btn"onClick={props.onAddCard}>Save Card</button>
         </>
     )
 }
