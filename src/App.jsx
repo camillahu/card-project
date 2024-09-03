@@ -10,6 +10,17 @@ const [inputName, setInputName] = useState('') //String som midlertidig lagrer i
 const [inputDescription, setInputDescription] = useState(''); //String som midlertidig lagrer input-verdien til description.
 const [inputImage, setInputImage] = useState(null)
 
+// const [payment, setPayment] = useState('');
+// const [shipping, setShipping] = useState('');
+
+// function handleShippingChange(event) {
+// setShipping(event.target.value)
+// }
+
+// function handlePaymentChange(event) {
+//   setPayment(event.target.value);
+// }
+
 const addCard = () => {
 if(inputName.trim() && inputDescription.trim()&& inputImage) {  
 //denne sjekker at det er verdier i begge variablene etter den har tatt vekk whitespace.
@@ -68,6 +79,29 @@ return( <>
         onDescriptionChange={handleDescriptionChange}
         onImageChange={handleImageChange}
         onAddCard={addCard}/>
+
+    {/* <select value={payment} onChange={handlePaymentChange}>
+      <option value="">Select an option</option>
+      <option value="Visa">Visa</option>
+      <option value="Mastercard">Mastercard</option>
+    </select>
+    <p>Payment: {payment}</p>
+
+    <label>
+      <input type="radio" 
+              value="Pick Up"
+              checked={shipping === "Pick Up"} 
+              onChange = {handleShippingChange}/>
+      Pick up
+      </label> <br/>
+    <label>
+    <input type="radio" 
+            value="Delivery"
+            checked={shipping === "Delivery"} 
+            onChange = {handleShippingChange}/>
+      Delivery
+      </label>
+      <p>Shipping: {shipping}</p> */}
   </>
 )
 }
